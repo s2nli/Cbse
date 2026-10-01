@@ -1,0 +1,64 @@
+/* CBSE Class 10 lecture drilldown — uses Codexyt theme tokens so every theme blends in. */
+.lectures-view[hidden], #courses[hidden] { display: none !important; }
+.lectures-view { padding-top: 0; }
+.lectures-top { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 18px; }
+.lectures-back { padding: 9px 14px; font-size: 13px; }
+.lectures-breadcrumb { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; min-width: 0; font-size: 13px; }
+.breadcrumb-item { padding: 4px 8px; border: 0; border-radius: 8px; background: none; color: var(--muted-bright); font: inherit; cursor: pointer; transition: .2s ease; }
+button.breadcrumb-item:hover { color: var(--text); background: rgba(255,255,255,.07); }
+.breadcrumb-item.active { color: var(--brand-bright); font-weight: 700; cursor: default; overflow-wrap: anywhere; }
+.breadcrumb-separator { color: var(--muted); }
+.lectures-head { margin-bottom: 22px; }
+.lectures-title { margin: 0 0 6px; font: 700 clamp(22px, 4vw, 30px)/1.2 "Space Grotesk", sans-serif; letter-spacing: -.01em; }
+.lectures-sub { margin: 0; color: var(--muted); font-size: 14px; }
+
+.subject-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 15px; }
+.subject-card { display: flex; flex-direction: column; gap: 10px; padding: 22px; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--panel); cursor: pointer; transition: transform .3s cubic-bezier(.16,1,.3,1), border-color .3s, box-shadow .3s; }
+.subject-card:hover, .subject-card:focus-visible { transform: translateY(-6px); border-color: rgba(166,156,255,.42); box-shadow: 0 20px 40px rgba(0,0,0,.25); outline: none; }
+.subject-icon { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 14px; color: var(--brand-bright); background: rgba(139,124,255,.12); border: 1px solid rgba(139,124,255,.3); }
+.subject-icon svg { width: 24px; height: 24px; }
+.subject-name { font: 600 16px/1.3 "Space Grotesk", sans-serif; color: var(--text); }
+.subject-meta { color: var(--muted); font-size: 12px; }
+
+.chapter-list { display: grid; gap: 10px; }
+.chapter-item { display: flex; align-items: center; gap: 14px; padding: 14px 16px; border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--panel); cursor: pointer; transition: .25s ease; }
+.chapter-item:hover, .chapter-item:focus-visible { transform: translateX(4px); border-color: rgba(166,156,255,.42); background: var(--panel-soft); outline: none; }
+.chapter-num { flex: none; width: 30px; height: 30px; display: grid; place-items: center; border-radius: 9px; background: rgba(139,124,255,.12); color: var(--brand-bright); font-size: 12px; font-weight: 700; }
+.chapter-title { flex: 1; min-width: 0; font-size: 14px; font-weight: 600; color: var(--text); overflow-wrap: anywhere; }
+.chapter-count { flex: none; padding: 3px 9px; border-radius: 999px; border: 1px solid rgba(139,124,255,.35); background: rgba(139,124,255,.1); color: var(--brand-bright); font-size: 10px; font-weight: 700; letter-spacing: .04em; }
+.chapter-arrow { flex: none; width: 16px; height: 16px; color: var(--muted); }
+
+.lec-tabs { display: none; gap: 8px; margin-bottom: 16px; }
+.lec-tab { display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,.035); color: var(--muted-bright); font: 600 13px "DM Sans", sans-serif; cursor: pointer; transition: .2s ease; }
+.lec-tab span { padding: 1px 7px; border-radius: 999px; background: rgba(255,255,255,.08); font-size: 11px; }
+.lec-tab.active { color: #fff; border-color: transparent; background: linear-gradient(135deg, #9487ff, #6c5bed); }
+.lec-cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; align-items: start; }
+.lec-col-title { margin: 0 0 12px; font: 700 15px "Space Grotesk", sans-serif; color: var(--brand-bright); }
+.lec-col:nth-child(2) .lec-col-title { color: var(--mint); }
+.video-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+.video-card { overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius-md); background: var(--panel); cursor: pointer; transition: transform .3s cubic-bezier(.16,1,.3,1), border-color .3s, box-shadow .3s; }
+.video-card:hover, .video-card:focus-visible { transform: translateY(-5px); border-color: rgba(166,156,255,.42); box-shadow: 0 20px 40px rgba(0,0,0,.25); outline: none; }
+.video-thumb { position: relative; height: 150px; display: grid; place-items: center; background: radial-gradient(circle at 70% 30%, rgba(139,124,255,.28), transparent 60%), linear-gradient(140deg, var(--panel-soft), var(--bg-raised)); overflow: hidden; }
+.video-thumb img { position: absolute; top: 12px; left: 12px; width: 40px; height: 40px; border-radius: 11px; object-fit: cover; border: 1px solid var(--line-strong); box-shadow: 0 6px 16px rgba(0,0,0,.35); }
+.play-icon { position: relative; z-index: 1; width: 52px; height: 52px; display: grid; place-items: center; border-radius: 50%; color: #fff; background: linear-gradient(135deg, var(--brand-bright), var(--brand)); box-shadow: 0 8px 22px rgba(109,91,237,.45); transition: transform .25s cubic-bezier(.34,1.56,.64,1); }
+.play-icon svg { width: 22px; height: 22px; margin-left: 2px; }
+.video-card:hover .play-icon { transform: scale(1.12); }
+.video-duration { position: absolute; z-index: 1; right: 10px; bottom: 10px; padding: 3px 8px; border-radius: 8px; color: #fff; background: rgba(8,10,15,.78); font-size: 11px; font-weight: 700; letter-spacing: .02em; backdrop-filter: blur(6px); }
+.video-info { padding: 13px 15px 15px; }
+.video-title { display: -webkit-box; overflow: hidden; -webkit-line-clamp: 2; -webkit-box-orient: vertical; font: 600 14px/1.4 "Space Grotesk", sans-serif; color: var(--text); }
+.video-meta { display: flex; justify-content: space-between; gap: 8px; margin-top: 8px; color: var(--muted); font-size: 12px; }
+
+@media (max-width: 760px) {
+  .lec-tabs { display: flex; }
+  .lec-cols { grid-template-columns: 1fr; }
+  .lec-col { display: none; }
+  .lec-col.active { display: block; }
+  .lec-col-title { display: none; }
+  .subject-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .subject-card { padding: 16px; }
+  .video-thumb { height: 140px; }
+}
+@media (prefers-reduced-motion: reduce), html[data-reduced-motion="true"] {
+  .subject-card, .chapter-item, .video-card, .play-icon { transition: none; }
+  .subject-card:hover, .chapter-item:hover, .video-card:hover { transform: none; }
+}
